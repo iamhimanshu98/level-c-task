@@ -78,7 +78,7 @@ CumulativeHackers AS (
         S1.hacker_id
     FROM
         Submissions S1
-    WHERE S1.submission_date >= '2016-03-01' -- Contest start date 
+    WHERE S1.submission_date >= '2016-03-01'
 )
 SELECT
     RDS.submission_date,
@@ -90,12 +90,12 @@ FROM
 JOIN
     Hackers H ON RDS.hacker_id = H.hacker_id
 JOIN
-    CumulativeHackers CH ON CH.submission_date <= RDS.submission_date -- Condition for cumulative count
+    CumulativeHackers CH ON CH.submission_date <= RDS.submission_date 
 WHERE
-    RDS.rnk = 1 -- Select the top hacker for each day 
+    RDS.rnk = 1
 GROUP BY
     RDS.submission_date,
     RDS.hacker_id,
     H.name
 ORDER BY
-    RDS.submission_date ASC; -- Order by date
+    RDS.submission_date ASC;

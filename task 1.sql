@@ -39,8 +39,8 @@ FROM
 GROUP BY
     GroupingKey
 ORDER BY
-    DATEDIFF(day, MIN(Start_Date), MAX(End_Date)) ASC, -- Order by completion days
-    MIN(Start_Date) ASC; -- Then by start date
+    DATEDIFF(day, MIN(Start_Date), MAX(End_Date)) ASC, 
+    MIN(Start_Date) ASC; 
 GO
 
 

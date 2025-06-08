@@ -26,7 +26,7 @@ FROM
 JOIN
     Functions F2 ON F1.X = F2.Y AND F1.Y = F2.X
 WHERE
-    F1.X < F1.Y -- To get (X, Y) where X < Y and its symmetric pair (Y, X)
-    OR (F1.X = F1.Y AND F1.X <= F2.X AND F1.Y <= F2.Y AND F1.X = F2.X) -- To handle self-symmetric pairs (X,X) and cases where X=Y and there are multiple such entries
+    F1.X < F1.Y 
+    OR (F1.X = F1.Y AND F1.X <= F2.X AND F1.Y <= F2.Y AND F1.X = F2.X) 
 ORDER BY
     F1.X ASC;

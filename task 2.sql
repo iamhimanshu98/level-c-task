@@ -47,12 +47,12 @@ SELECT
 FROM
     Students S
 JOIN
-    Friends F ON S.ID = F.ID -- Join student to their friend
+    Friends F ON S.ID = F.ID 
 JOIN
-    Packages P_Student ON S.ID = P_Student.ID -- Get student's salary
+    Packages P_Student ON S.ID = P_Student.ID 
 JOIN
-    Packages P_Friend ON F.Friend_ID = P_Friend.ID -- Get friend's salary
+    Packages P_Friend ON F.Friend_ID = P_Friend.ID 
 WHERE
-    P_Friend.Salary > P_Student.Salary -- Condition: friend's salary is higher 
+    P_Friend.Salary > P_Student.Salary 
 ORDER BY
-    P_Friend.Salary ASC; -- Order by friend's salary
+    P_Friend.Salary ASC; 
